@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>虚拟机镜像 · 云仓</title>
+  <meta name="description" content="云仓虚拟机镜像下载：x86_64 与 ARM64 两种架构，导入后开机即用，无需装系统与依赖。" />
+  <meta name="author" content="Yuncang" />
+  <meta name="theme-color" content="#fbfbfd" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/apple.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="container nav" aria-label="主导航">
+      <a class="logo" href="index.html" aria-label="云仓首页"><img class="logo-img" src="assets/logo-mark.png" alt="Yuncang" /> Yuncang</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="desktop.html">桌面端</a></li>
+        <li><a href="client.html">客户端</a></li>
+        <li><a href="vm.html">镜像</a></li>
+        <li><a href="manual.html">手册</a></li>
+        <li><a href="dev.html">开发者</a></li>
+        <li><a href="deploy.html">部署</a></li>
+        <li><a class="nav-cta" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><span>虚拟机镜像</span></nav>
+        <h1>虚拟机镜像</h1>
+        <p class="lead">系统、数据库、云仓都打包好了，导入开机即用，不用装依赖。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Download</span>
+          <h2>按宿主架构选镜像</h2>
+          <p>宿主是 Intel / AMD 选 x86_64，宿主是 ARM（Apple 芯片、鲲鹏、倚天）选 ARM64。镜像与宿主架构必须一致。</p>
+        </div>
+        <div class="split">
+          <article class="panel reveal">
+            <h3>x86_64 镜像</h3>
+            <p style="color:var(--text-dim);font-size:.94rem">适用于 Intel / AMD 平台：VMware、VirtualBox、Proxmox、KVM、Hyper-V</p>
+            <div class="repo-meta" style="margin-top:14px">
+              <span>qcow2</span><span>约 3.2 GB</span><span>开机即用</span>
+            </div>
+            <div class="hero-actions" style="margin-top:22px;justify-content:flex-start">
+              <a class="btn btn-primary" href="https://github.com/yuejiaxinabc/Yuncang-Update/releases/download/vm-1.5.3/Yuncang-1.5.3-x86_64.qcow2" target="_blank" rel="noopener">下载 x86_64 镜像</a>
+            </div>
+          </article>
+          <article class="panel reveal" data-delay="1">
+            <h3>ARM64 镜像</h3>
+            <p style="color:var(--text-dim);font-size:.94rem">适用于 ARM64 平台：Apple 芯片上的 UTM / Parallels、鲲鹏、倚天、ARM 云主机</p>
+            <div class="repo-meta" style="margin-top:14px">
+              <span>qcow2</span><span>约 3.1 GB</span><span>开机即用</span>
+            </div>
+            <div class="hero-actions" style="margin-top:22px;justify-content:flex-start">
+              <a class="btn btn-primary" href="https://github.com/yuejiaxinabc/Yuncang-Update/releases/download/vm-1.5.3/Yuncang-1.5.3-arm64.qcow2" target="_blank" rel="noopener">下载 ARM64 镜像</a>
+            </div>
+          </article>
+        </div>
+        <p style="margin-top:20px;color:var(--text-dim);font-size:.92rem">
+          镜像内已含 Ubuntu 22.04、Node 20、MySQL 8 与云仓 1.5.3，首次开机自动初始化数据库。
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Windows</span>
+          <h2>Windows 桌面客户端</h2>
+          <p>不想开虚拟机就用桌面端，双击安装填服务器地址即可。</p>
+        </div>
+        <div class="feature-grid" style="grid-template-columns:minmax(0,560px);justify-content:center">
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">🪟</div>
+            <h3>Yuncang-Setup-0.6.2-x64.exe</h3>
+            <p>Windows 10 / 11 / Server 2019+，自带运行环境，安装即写开始菜单与卸载项。</p>
+            <p style="margin-top:12px;color:var(--text-dim);font-size:.9rem">82 MB · 首次运行可能被 SmartScreen 提示，点「更多信息 → 仍要运行」</p>
+            <div class="hero-actions" style="margin-top:20px;justify-content:flex-start">
+              <a class="btn btn-primary" href="https://github.com/yuejiaxinabc/Yuncang-desktop/releases/download/v0.6.2/Yuncang-Setup-0.6.2-x64.exe" target="_blank" rel="noopener">下载 Windows 客户端</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Steps</span>
+          <h2>导入与开机</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">1️⃣</div>
+            <h3>导入镜像</h3>
+            <p>VMware：文件 → 打开 → 选 qcow2；VirtualBox：需要先转 vdi（<code>VBoxManage clonemedium</code>）；Proxmox：直接上传到存储。</p>
+          </article>
+          <article class="feature-card reveal" data-delay="1">
+            <div class="feature-icon" aria-hidden="true">2️⃣</div>
+            <h3>分配资源</h3>
+            <p>CPU 2 核起，内存 4 GB 起，磁盘按镜像大小留 20 GB 余量。网络用 NAT 或桥接。</p>
+          </article>
+          <article class="feature-card reveal" data-delay="2">
+            <div class="feature-icon" aria-hidden="true">3️⃣</div>
+            <h3>开机访问</h3>
+            <p>开机后终端会显示访问地址；浏览器打开 <code>http://虚拟机IP/</code>，账号 <code>admin</code> / <code>Admin@123</code>，登录后改密。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Notes</span>
+          <h2>说明</h2>
+        </div>
+        <div class="split">
+          <article class="panel reveal">
+            <h3>默认配置</h3>
+            <p>系统 Ubuntu 22.04 · Node 20.18.1 · MySQL 8 · 云仓 1.5.3，服务名 <code>cloud-warehouse</code>，端口 9958，nginx 反代 80。</p>
+          </article>
+          <article class="panel reveal" data-delay="1">
+            <h3>改远程访问</h3>
+            <p>如需外网访问，进系统后配域名与证书：面板「设置 → 域名与 HTTPS」，或直接跑 <code>bash /opt/cloud-warehouse/scripts/apply-domain.sh</code>。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><img class="logo-img" src="assets/logo-mark.png" alt="Yuncang" /> Yuncang</a>
+          <p class="footer-desc">自托管的开源仓储管理系统，Web / 桌面 / 小程序三端一致，数据留在自己的服务器。</p>
+        </div>
+        <div>
+          <h4>产品</h4>
+          <ul>
+            <li><a href="desktop.html">桌面端</a></li>
+            <li><a href="client.html">客户端</a></li>
+            <li><a href="vm.html">虚拟机镜像</a></li>
+            <li><a href="deploy.html">部署安装</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>开发者</h4>
+          <ul>
+            <li><a href="manual.html">用户手册</a></li>
+            <li><a href="dev.html">接口与 SDK</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <ul>
+            <li><a href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang/issues" target="_blank" rel="noopener">问题反馈</a></li>
+            <li><a href="https://opensource.org/licenses/Apache-2.0" target="_blank" rel="noopener">Apache 2.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Yuncang · 保留所有权利</span>
+        <span>Apache 2.0 License</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
