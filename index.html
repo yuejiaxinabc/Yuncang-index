@@ -4,17 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>云仓 Yuncang · 自托管开源 WMS</title>
-  <meta name="description" content="云仓（Yuncang）自托管开源 WMS：Web 客户端、桌面客户端、微信小程序，一条命令部署到自己的服务器。" />
+  <meta name="description" content="云仓（Yuncang）自托管开源仓储管理系统：Web 客户端、桌面端、微信小程序，一条命令部署到自己的服务器。" />
   <meta name="author" content="Yuncang" />
   <meta name="theme-color" content="#fbfbfd" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Yuncang" />
+  <meta property="og:title" content="云仓 Yuncang · 自托管开源 WMS" />
+  <meta property="og:description" content="Web 主控台 + 桌面端 + 微信小程序 + SDK，装在自己的服务器上。" />
+  <meta property="og:locale" content="zh_CN" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='9' fill='%230071e3'/%3E%3Cpath d='M9 21V11l7 5 7-5v10' stroke='white' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <canvas id="starfield" aria-hidden="true"></canvas>
   <div class="bg-aurora" aria-hidden="true"></div>
-  <header class="site-header">
+
+  <header class="site-header" id="top">
     <nav class="container nav" aria-label="主导航">
       <a class="logo" href="index.html" aria-label="Yuncang 首页"><span class="logo-mark" aria-hidden="true">云</span> Yuncang</a>
       <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -28,19 +34,27 @@
       </ul>
     </nav>
   </header>
+
   <main>
-    <section class="hero" aria-label="首屏">
+    <section class="hero" aria-label="产品首屏">
       <div class="container">
-        <span class="hero-badge reveal">v1.5.3 稳定版 · 支持 x86_64 与 ARM64</span>
+        <span class="hero-badge reveal">🚀 v1.5.3 稳定版 — 新增 ARM64 支持与域名自助配证</span>
         <h1 class="reveal" data-delay="1">把仓库管明白的<br /><span class="gradient-text">自托管开源 WMS</span></h1>
         <p class="lead reveal" data-delay="2">
-          商品、入库、出库、调拨、盘点、货位、批次效期、报表预警，一套系统。
+          商品、入库、出库、调拨、盘点、货位、批次效期、报表预警，一套系统全部覆盖。
           装在你自己的服务器上，数据留在本地 MySQL。
         </p>
         <div class="hero-actions reveal" data-delay="3">
-          <a class="btn btn-primary" href="deploy.html">部署安装</a>
-          <a class="btn btn-ghost" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验 →</a>
+          <a class="btn btn-primary" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a>
+          <a class="btn btn-ghost" href="deploy.html">部署安装 →</a>
         </div>
+        <div class="hero-stats reveal" data-delay="3">
+          <div class="stat"><b>1.5.3</b><span>服务端稳定版</span></div>
+          <div class="stat"><b>3 端</b><span>Web / 桌面 / 小程序</span></div>
+          <div class="stat"><b>30</b><span>开放接口</span></div>
+          <div class="stat"><b>Apache 2.0</b><span>开源许可</span></div>
+        </div>
+
         <div class="hero-window" id="heroWindow">
           <div class="hero-window-bar" aria-hidden="true">
             <span class="dot" style="background:#ff5f57"></span>
@@ -48,45 +62,133 @@
             <span class="dot" style="background:#28c840"></span>
           </div>
           <div class="hero-window-body">
-            <span class="cmt"># x86_64</span><br />
-            curl -fsSL https://update.yuejiaxin.ln.cn/<span class="str">install.sh</span> | sudo bash<br /><br />
-            <span class="cmt"># ARM64</span><br />
-            curl -fsSL https://update.yuejiaxin.ln.cn/<span class="str">install-arm64.sh</span> | sudo bash
+            <span class="cmt"># x86_64（Intel / AMD / 普通云服务器）</span><br />
+            <span class="kw">curl</span> -fsSL https://update.yuejiaxin.ln.cn/<span class="str">install.sh</span> | sudo bash<br /><br />
+            <span class="cmt"># ARM64（鲲鹏 / 倚天 / ARM 云实例）</span><br />
+            <span class="kw">curl</span> -fsSL https://update.yuejiaxin.ln.cn/<span class="str">install-arm64.sh</span> | sudo bash<br /><br />
+            <span class="cmt"># 装完打开 http://服务器IP  ·  admin / Admin@123</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="features" aria-label="三个入口">
       <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Get Started</span>
+          <h2>三个入口，各管一段</h2>
+          <p>桌面端贴现场，客户端随时打开，部署一条命令。</p>
+        </div>
         <div class="feature-grid">
           <a class="feature-card reveal" href="desktop.html">
-            <div class="feature-icon">🖥️</div>
+            <div class="feature-icon" aria-hidden="true">🖥️</div>
             <h3>桌面端</h3>
-            <p>Windows 与 macOS，填一次服务器地址与密钥就能进工作台；支持扫码枪与标签打印。</p>
-            <p style="margin-top:12px;color:var(--primary)">下载与安装 →</p>
+            <p>Windows 与 macOS，填一次服务器地址与密钥就能进工作台；扫码枪、标签打印、长时间作业。</p>
+            <p style="margin-top:14px;color:var(--primary)">下载与安装 →</p>
           </a>
           <a class="feature-card reveal" data-delay="1" href="client.html">
-            <div class="feature-icon">🌐</div>
+            <div class="feature-icon" aria-hidden="true">🌐</div>
             <h3>客户端</h3>
-            <p>Web 浏览器直接打开，微信小程序现场扫码作业，权限与数据完全一致。</p>
-            <p style="margin-top:12px;color:var(--primary)">两种打开方式 →</p>
+            <p>浏览器打开即用的 Web 主控台，以及现场扫码作业的微信小程序，权限与数据完全一致。</p>
+            <p style="margin-top:14px;color:var(--primary)">两种打开方式 →</p>
           </a>
           <a class="feature-card reveal" data-delay="2" href="deploy.html">
-            <div class="feature-icon">🚀</div>
+            <div class="feature-icon" aria-hidden="true">🚀</div>
             <h3>部署安装</h3>
-            <p>x86_64 用 <code>install.sh</code>，ARM64 用 <code>install-arm64.sh</code>，也支持离线包。</p>
-            <p style="margin-top:12px;color:var(--primary)">两套指令 →</p>
+            <p>x86_64 用 <code>install.sh</code>，ARM64 用 <code>install-arm64.sh</code>；内网可离线安装。</p>
+            <p style="margin-top:14px;color:var(--primary)">两套指令 →</p>
           </a>
         </div>
       </div>
     </section>
+
+    <section class="section section-alt" aria-label="能力概览">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Features</span>
+          <h2>仓库日常需要的事，一套系统说清楚</h2>
+          <p>从建档到出库，从货位到报表，都是同一套数据。</p>
+        </div>
+        <div class="split">
+          <article class="panel reveal">
+            <h3>📦 商品与库存</h3>
+            <p>编码、条码、分类、单位、安全库存；Excel 批量导入，模板与系统一致。库存实时按仓库与货位汇总。</p>
+            <div class="repo-meta">
+              <span>商品主数据</span><span>批次效期</span><span>库存金额</span>
+            </div>
+          </article>
+          <article class="panel reveal" data-delay="1">
+            <h3>🔄 出入库与调拨</h3>
+            <p>七种出库类型、多种入库来源，超可用量当场拦；仓与仓调拨双向留痕，单据可追溯到人。</p>
+            <div class="repo-meta">
+              <span>入库</span><span>出库</span><span>调拨</span><span>盘点</span>
+            </div>
+          </article>
+        </div>
+        <div class="split" style="margin-top:24px">
+          <article class="panel reveal">
+            <h3>🔐 权限与审计</h3>
+            <p>角色与仓库范围双层控制，每一步操作写审计日志；支持两步验证与登录风控。</p>
+          </article>
+          <article class="panel reveal" data-delay="1">
+            <h3>💾 备份与更新</h3>
+            <p>面板一键备份、恢复、下载；升级失败自动回滚，不动业务数据。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="开始使用">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>十分钟，把仓库跑起来</h2>
+          <p>装在自己的服务器上，数据不出内网；装完就能用，后续在面板里自助更新。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a>
+            <a class="btn btn-ghost" href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">获取源码</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-bottom" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
-        <span>© 2026 Yuncang · Apache 2.0 License</span>
-        <span><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></span>
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><span class="logo-mark" aria-hidden="true">云</span> Yuncang</a>
+          <p class="footer-desc">自托管的开源仓储管理系统，Web / 桌面 / 小程序三端一致，数据留在自己的服务器。</p>
+        </div>
+        <div>
+          <h4>产品</h4>
+          <ul>
+            <li><a href="desktop.html">桌面端</a></li>
+            <li><a href="client.html">客户端</a></li>
+            <li><a href="manual.html">用户手册</a></li>
+            <li><a href="deploy.html">部署安装</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>开发者</h4>
+          <ul>
+            <li><a href="dev.html">接口与 SDK</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang-Update/releases" target="_blank" rel="noopener">下载</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>关于</h4>
+          <ul>
+            <li><a href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang/issues" target="_blank" rel="noopener">问题反馈</a></li>
+            <li><a href="https://opensource.org/licenses/Apache-2.0" target="_blank" rel="noopener">Apache 2.0</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Yuncang · 保留所有权利</span>
+        <span>Apache 2.0 License</span>
       </div>
     </div>
   </footer>
