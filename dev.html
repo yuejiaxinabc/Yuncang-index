@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>开发者手册 · 云仓</title>
+  <meta name="description" content="云仓开发者手册：开放接口与鉴权、API 密钥 scope、JavaScript/Python/Go SDK、错误码、更新协议 manifest v2 与心跳机制。" />
+  <meta name="author" content="小岳 (xiao yue)" />
+  <link rel="canonical" href="https://yuejiaxinabc.github.io/cloudwarehouse-index/dev.html" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/docs.css" />
+  <link rel="stylesheet" href="assets/css/code-block.css" />
+</head>
+<body>
+
+  <header id="siteHeader" class="site-header header-dark">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="云仓首页">
+        <img class="brand-logo" src="assets/logo.png" alt="云仓 Logo" width="36" height="36">
+        <span class="brand-name">云仓 <span class="brand-sub">Yuncang</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="features.html">产品功能</a>
+        <a href="desktop.html">桌面客户端</a>
+        <a href="manual.html">用户手册</a>
+        <a href="dev.html" class="active" aria-current="page">开发者手册</a>
+        <a href="install.html">部署安装</a>
+        <a href="releases.html">版本发布</a>
+        <a href="changelog.html">更新日志</a>
+        <a href="privacy.html">隐私政策</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn-github" href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.523 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-primary btn-sm" href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 9v3.5a3 3 0 0 0 3 3h5M15.5 15V9"/></svg>
+          Gitee
+        </a>
+        <button id="menuToggle" class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 移动端展开菜单 -->
+    <div id="mobileMenu" class="mobile-menu">
+      <ul>
+        <li><a href="index.html" class="active" aria-current="page">首页</a></li>
+        <li><a href="features.html">产品功能</a></li>
+        <li><a href="desktop.html">桌面客户端</a></li>
+        <li><a href="install.html">部署安装</a></li>
+        <li><a href="pricing.html">部署服务</a></li>
+        <li><a href="releases.html">版本发布</a></li>
+        <li><a href="changelog.html">更新日志</a></li>
+        <li><a href="security.html">安全日志</a></li>
+        <li class="mobile-cta">
+          <a class="btn btn-outline btn-sm" href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-primary btn-sm" href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Developer Manual</div>
+        <h1 class="title">云仓开发者手册</h1>
+        <p class="desc">把云仓接进你自己的系统：开放接口、API 密钥、多语言 SDK、错误码、更新协议与心跳机制。业务操作说明见 <a href="manual.html">用户手册</a>。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title">1. 鉴权</h2>
+        <p class="desc">开放接口统一前缀 <code class="mono">/api/v1/open</code>，用 API 密钥鉴权：</p>
+        <pre class="code-block"><code>Authorization: Bearer yc_live_你的密钥</code></pre>
+        <p class="desc">密钥在云仓后台「设置 → API 管理」创建，可绑定：<b>scope</b>（能做什么）、<b>仓库范围</b>（能看哪些仓）、<b>IP 白名单</b>、<b>仅 HTTPS</b>、每分钟调用上限。密钥明文只显示一次。</p>
+        <div class="callout callout-amber"><b>不要把密钥打进前端或小程序包</b><p>小程序、网页里硬编码的密钥等于把仓库权限交给终端用户。终端场景请自建一层中转，或只发只读、限仓的密钥。</p></div>
+        <h3>常用 scope</h3>
+        <p class="desc"><code class="mono">product:read</code> · <code class="mono">inventory:read</code> · <code class="mono">warehouse:read</code> · <code class="mono">stock:read</code> · <code class="mono">stock:write</code> · <code class="mono">order:read</code> · <code class="mono">lot:read</code> · <code class="mono">report:read</code></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title">2. 接口一览</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>方法</th><th>路径</th><th>说明</th><th>scope</th></tr></thead>
+            <tbody>
+              <tr><td>GET</td><td class="mono">/me</td><td>密钥身份、权限、仓库范围、限速</td><td>—</td></tr>
+              <tr><td>GET</td><td class="mono">/meta</td><td>分类与计量单位</td><td>product:read</td></tr>
+              <tr><td>GET / POST</td><td class="mono">/products</td><td>商品列表 / 新建</td><td>product:read / product:write</td></tr>
+              <tr><td>GET / POST</td><td class="mono">/warehouses</td><td>仓库（<code>withLocations=1</code> 带货位）/ 新建</td><td>warehouse:read</td></tr>
+              <tr><td>GET / POST</td><td class="mono">/partners</td><td>客户与供应商</td><td>partner:read / write</td></tr>
+              <tr><td>GET</td><td class="mono">/inventory</td><td>库存快照（warehouseId / productId / keyword / 分页）</td><td>inventory:read</td></tr>
+              <tr><td>GET</td><td class="mono">/lots</td><td>批次与效期（<code>expiringDays</code> 查临期）</td><td>lot:read</td></tr>
+              <tr><td>GET</td><td class="mono">/movements</td><td>库存流水（<code>since</code> 增量同步）</td><td>stock:read</td></tr>
+              <tr><td>GET</td><td class="mono">/orders</td><td>单据（<code>type=inbound/outbound/transfer/stocktake</code>）</td><td>order:read</td></tr>
+              <tr><td>GET</td><td class="mono">/reports/low-stock</td><td>低库存预警</td><td>report:read</td></tr>
+              <tr><td>GET</td><td class="mono">/reports/stock-summary</td><td>库存汇总</td><td>report:read</td></tr>
+              <tr><td>GET</td><td class="mono">/reports/stock-value</td><td>库存金额</td><td>report:read</td></tr>
+              <tr><td>POST</td><td class="mono">/stock-in</td><td>入库（<code>autoPost: true</code> 建单即过账）</td><td>stock:write</td></tr>
+              <tr><td>POST</td><td class="mono">/stock-out</td><td>出库（库存不足时保留草稿并返回 postError）</td><td>stock:write</td></tr>
+              <tr><td>POST</td><td class="mono">/transfer</td><td>仓库调拨</td><td>stock:write</td></tr>
+              <tr><td>POST</td><td class="mono">/stocktake</td><td>生成盘点单</td><td>stock:write</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title">3. 请求约定</h2>
+        <div class="grid cols-2">
+          <div class="card"><h3>分页</h3><p>所有列表接受 <code class="mono">page</code>、<code class="mono">pageSize</code>（上限 200~500 视接口），返回 <code class="mono">{ items, total }</code>。</p></div>
+          <div class="card"><h3>幂等</h3><p>写接口自动/显式带 <code class="mono">Idempotency-Key</code>，同一 key 重复提交只落一单；不同请求体复用同一 key 会返回冲突。</p></div>
+          <div class="card"><h3>时间</h3><p>统一 ISO 8601 字符串（<code class="mono">2026-11-15T10:00:00Z</code>），区间查询用 <code class="mono">from</code> / <code class="mono">to</code>。</p></div>
+          <div class="card"><h3>重试</h3><p>429 与 5xx 可退避重试；写操作重试务必沿用同一幂等键。</p></div>
+        </div>
+        <h3>错误码</h3>
+        <div class="table-wrap"><table><thead><tr><th>HTTP</th><th>code</th><th>含义与处置</th></tr></thead><tbody>
+          <tr><td>401</td><td class="mono">KEY_INVALID</td><td>密钥无效/停用/过期，或 IP 不在白名单，去后台重新生成</td></tr>
+          <tr><td>403</td><td class="mono">SCOPE_DENIED</td><td>密钥缺该操作的 scope</td></tr>
+          <tr><td>403</td><td class="mono">HTTPS_REQUIRED</td><td>密钥要求 HTTPS，改域名 + 证书</td></tr>
+          <tr><td>403</td><td class="mono">IP_NOT_ALLOWED</td><td>出口 IP 不在白名单</td></tr>
+          <tr><td>409</td><td class="mono">IDEMPOTENCY_CONFLICT</td><td>同一个 key 用了不同请求体</td></tr>
+          <tr><td>429</td><td>—</td><td>超出每分钟上限，退避后重试</td></tr>
+          <tr><td>5xx</td><td>—</td><td>服务端异常，可重试；持续失败看服务端日志</td></tr>
+        </tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title">4. SDK</h2>
+        <p class="desc">官方 SDK 覆盖三种语言，接口命名与能力一致：地址归一化、写操作幂等键、429/5xx 退避重试、错误码翻译、自动翻页、货位四段编码。</p>
+        <h3>JavaScript / TypeScript（Node、浏览器、微信小程序）</h3>
+        <pre class="code-block"><code>npm i yuncang-sdk</code></pre>
+        <pre class="code-block"><code>import { Yuncang } from 'yuncang-sdk';
+const yc = new Yuncang({ baseUrl: 'https://yc.example.com', apiKey: process.env.YC_KEY });
+
+const me = await yc.me();
+const inv = await yc.inventory.list({ warehouseId: 1, pageSize: 200 });
+const res = await yc.stockIn.create({ warehouseId: 1, autoPost: true, items: [{ productId: 12, quantity: 20 }] });</code></pre>
+        <h3>Python</h3>
+        <pre class="code-block"><code>pip install ./python
+
+from yuncang import Client, Credential, StockInRequest, StockItem
+c = Client(Credential("yc_live_xxx", "https://yc.example.com"))
+print(c.me()["name"])
+c.stock_in(StockInRequest(warehouse_id=1, auto_post=True, items=[StockItem(product_id=12, quantity=20)]))</code></pre>
+        <h3>Go</h3>
+        <pre class="code-block"><code>go get github.com/yuejiaxinabc/Yuncang-SDK/go
+
+c := yuncang.MustNewClient(yuncang.Credential{APIKey: "yc_live_xxx", BaseURL: "https://yc.example.com"}, yuncang.Options{})
+me, err := c.Me(context.Background())</code></pre>
+        <p class="desc">源码与示例：<a href="https://github.com/yuejiaxinabc/Yuncang-SDK" target="_blank" rel="noopener">Yuncang-SDK</a>。小程序版打包在 <code class="mono">dist/miniprogram/index.js</code>，会自适配 <code class="mono">wx.request</code>。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title">5. 更新协议（manifest v2）</h2>
+        <p class="desc">客户端先拿平台清单，再按测速挑源下载，最后校验 SHA256。清单结构：</p>
+        <pre class="code-block"><code>{
+  "schema": 2,
+  "product": "yuncang-desktop",
+  "channel": "stable",
+  "latest": {
+    "platform": "win-x64",
+    "version": "0.6.2",
+    "minVersion": "0.4.0",
+    "mandatory": false,
+    "notes": "本版本修复了\n1. …",
+    "size": 85828393,
+    "sha256": "…",
+    "sources": ["https://…/win-x64.exe", "https://…/win-x64.exe"],
+    "rollout": { "percent": 100 }
+  }
+}</code></pre>
+        <p class="desc">字段约定：<code class="mono">platform</code> 取 <code class="mono">win-x64</code> / <code class="mono">mac-arm64</code> / <code class="mono">mac-x64</code>；<code class="mono">rollout.percent</code> 控制灰度（0 暂停，100 全量）；<code class="mono">sources</code> 给多个地域地址，客户端按 HEAD 测速选最快。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title">6. 心跳与设备可见性</h2>
+        <p class="desc">服务端每小时向更新中心上报一次心跳，用于版本分布、落后提醒与在线判定。上报内容：</p>
+        <div class="table-wrap"><table><thead><tr><th>字段</th><th>示例</th><th>用途</th></tr></thead><tbody>
+          <tr><td class="mono">installId</td><td>随机生成的设备标识</td><td>区分设备，不含用户信息</td></tr>
+          <tr><td class="mono">version</td><td>1.5.3</td><td>版本分布、落后判断</td></tr>
+          <tr><td class="mono">channel</td><td>stable / beta</td><td>决定收到哪个通道的更新</td></tr>
+          <tr><td class="mono">hostname</td><td>仓库服务器主机名</td><td>控制台展示，便于认机器</td></tr>
+          <tr><td class="mono">port / domain</td><td>3000 / yc.example.com</td><td>排障与跳转</td></tr>
+          <tr><td class="mono">os</td><td>Linux 5.15</td><td>兼容性判断</td></tr>
+        </tbody></table></div>
+        <div class="callout"><b>可以关掉</b><p>不需要版本管理时，在服务端配置里关闭心跳即可，云仓业务功能不受影响。详见 <a href="privacy.html">隐私政策</a>。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="title">7. 构建与签名</h2>
+        <pre class="code-block"><code>npm ci
+npm run smoke        # 18 项自检
+npm run dist:win     # Windows 安装包
+npm run dist:mac     # macOS dmg（arm64 + x64）
+npm run dist:appx    # MSIX（上架 Microsoft Store）</code></pre>
+        <p class="desc">Windows 安装包参与 SignPath Foundation 开源签名计划（详见仓库 <code class="mono">.github/workflows/sign-windows.yml</code>）；macOS 需要 Apple Developer ID 证书 + notarize 才能消除 Gatekeeper 提示。</p>
+        <h3>贡献</h3>
+        <p class="desc">仓库：<a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Yuncang</a>（服务端）、<a href="https://github.com/yuejiaxinabc/Yuncang-desktop" target="_blank" rel="noopener">Yuncang-desktop</a>（桌面端）、<a href="https://github.com/yuejiaxinabc/Yuncang-SDK" target="_blank" rel="noopener">Yuncang-SDK</a>（SDK）。提交前请跑通自检，保持 Apache 2.0 开源许可 许可兼容。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="云仓首页">
+            <img class="brand-logo" src="assets/logo.png" alt="云仓 Logo" width="36" height="36">
+            <span class="brand-name">云仓 <span class="brand-sub">Yuncang</span></span>
+          </a>
+          <p>面向中小企业的开源全链路库存管理系统。一条命令部署，浏览器打开即用，仓库全流程可追溯。</p>
+          <div class="footer-social">
+            <a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.523 2 12 2z"/></svg>
+              GitHub
+            </a>
+            <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 9v3.5a3 3 0 0 0 3 3h5M15.5 15V9"/></svg>
+              Gitee
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>页面导航</h4>
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="features.html">产品功能</a></li>
+            <li><a href="desktop.html">桌面客户端</a></li>
+            <li><a href="install.html">部署安装</a></li>
+            <li><a href="pricing.html">部署服务</a></li>
+            <li><a href="releases.html">版本发布</a></li>
+            <li><a href="changelog.html">更新日志</a></li>
+            <li><a href="security.html">安全日志</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>项目文档</h4>
+          <ul>
+            <li><a href="https://yc.yuejiaxin.ln.cn/" target="_blank" rel="noopener">在线演示 ↗</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/README.md" target="_blank" rel="noopener">README</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/SECURITY.md" target="_blank" rel="noopener">SECURITY</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/DEPLOYMENT.md" target="_blank" rel="noopener">DEPLOYMENT</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang-MiniProgram" target="_blank" rel="noopener">微信小程序端</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/LICENSE" target="_blank" rel="noopener">Apache 2.0 开源许可 许可证</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year">2026</span> 小岳 (xiao yue) · 基于 Apache 2.0 开源许可 许可证开源</p>
+        <p>云仓 · Yuncang Inventory Management · 当前版本 v1.5.3</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
