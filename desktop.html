@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>桌面端 · 云仓</title>
-  <meta name="description" content="云仓桌面客户端下载：Windows 0.6.2、macOS 0.5.10（Apple 芯片与 Intel），填一次服务器地址与密钥即可进工作台。" />
+  <meta name="description" content="云仓桌面客户端下载：Windows 0.6.2，填一次服务器地址与密钥即可进工作台，支持扫码枪与标签打印。" />
   <meta name="author" content="Yuncang" />
   <meta name="theme-color" content="#fbfbfd" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -35,31 +35,19 @@
       <div class="container">
         <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><span>桌面端</span></nav>
         <h1>桌面端</h1>
-        <p class="lead">Windows 与 macOS，扫码枪、标签打印、长时间作业都在这。</p>
+        <p class="lead">Windows 客户端，扫码枪、标签打印、长时间作业都在这。</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="section-head reveal"><span class="eyebrow">Download</span><h2>下载</h2></div>
-        <div class="feature-grid">
+        <div class="feature-grid" style="grid-template-columns:minmax(0,520px);justify-content:center">
           <article class="feature-card reveal">
             <div class="feature-icon">🪟</div>
             <h3>Windows x64</h3>
             <p><code>Yuncang-Setup-0.6.2-x64.exe</code></p>
             <p>Windows 10 / 11 / Server 2019+，安装即写开始菜单与卸载项。</p>
-          </article>
-          <article class="feature-card reveal" data-delay="1">
-            <div class="feature-icon">🍎</div>
-            <h3>macOS Apple 芯片</h3>
-            <p><code>Yuncang-0.5.10-arm64.dmg</code></p>
-            <p>M1 / M2 / M3 / M4。</p>
-          </article>
-          <article class="feature-card reveal" data-delay="2">
-            <div class="feature-icon">💻</div>
-            <h3>macOS Intel</h3>
-            <p><code>Yuncang-0.5.10-x64.dmg</code></p>
-            <p>x86_64 Mac。</p>
           </article>
         </div>
         <div style="text-align:center;margin-top:36px" class="reveal">
@@ -77,7 +65,7 @@
         </div>
         <div class="split" style="margin-top:20px">
           <article class="panel reveal"><h3>3 · 授权范围</h3><p>能操作哪些仓库由密钥的 scope 与授权仓库决定。</p></article>
-          <article class="panel reveal" data-delay="1"><h3>被系统拦截</h3><p>Windows「更多信息 → 仍要运行」；macOS「系统设置 → 隐私与安全性」允许一次。</p></article>
+          <article class="panel reveal" data-delay="1"><h3>被系统拦截</h3><p>首次运行可能被 SmartScreen 提示「未知发布者」，点「更多信息 → 仍要运行」。</p></article>
         </div>
       </div>
     </section>
