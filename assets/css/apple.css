@@ -171,3 +171,15 @@ h1{font-weight:700}
   .feature-card,.panel,.btn{transition:none}
   .feature-card:hover,.panel:hover,.btn:hover{transform:none}
 }
+
+/* ---------- 品牌图标 ---------- */
+.logo{display:inline-flex;align-items:center;gap:10px}
+.logo .logo-img{
+  width:30px;height:30px;display:block;border-radius:8px;
+  object-fit:contain;
+  filter:drop-shadow(0 2px 6px rgba(0,113,227,.18));
+  transition:transform .35s cubic-bezier(.22,.61,.36,1);
+}
+.logo:hover .logo-img{transform:scale(1.06) rotate(-2deg)}
+.site-footer .logo .logo-img{width:26px;height:26px}
+@media (max-width:900px){.logo .logo-img{width:26px;height:26px}}
