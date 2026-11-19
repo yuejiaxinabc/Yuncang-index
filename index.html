@@ -3,324 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>云仓 · 开源仓储管理系统 | Web + 桌面 + 小程序 + SDK</title>
-  <meta name="description" content="云仓（Yuncang）是开源全链路库存管理系统：商品、入库、出库、调拨、盘点、库位、批次效期、报表预警。一条命令部署到自己的服务器，Web、Windows/macOS 桌面端与微信小程序三端一致，提供 17 个开放接口与 JavaScript/Python/Go SDK。" />
-  <meta name="keywords" content="云仓,库存管理,仓储系统,WMS,入库,出库,调拨,盘点,库位,批次效期,开源,Apache 2.0 开源许可,桌面客户端,微信小程序,SDK,API" />
-  <meta name="author" content="小岳 (xiao yue)" />
-  <link rel="canonical" href="https://yuejiaxinabc.github.io/cloudwarehouse-index/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="云仓 Yuncang" />
-  <meta property="og:title" content="云仓 · 开源仓储管理系统" />
-  <meta property="og:description" content="Web + Windows/macOS 桌面 + 微信小程序，一条命令部署，开源 Apache 2.0 开源许可。" />
-  <meta property="og:url" content="https://yuejiaxinabc.github.io/cloudwarehouse-index/" />
-  <meta property="og:image" content="https://yuejiaxinabc.github.io/cloudwarehouse-index/assets/img/desktop/overview.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <title>云仓 Yuncang · 自托管开源 WMS</title>
+  <meta name="description" content="云仓（Yuncang）自托管开源 WMS：Web 客户端、桌面客户端、微信小程序，一条命令部署到自己的服务器。" />
+  <meta name="author" content="Yuncang" />
+  <meta name="theme-color" content="#fbfbfd" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='9' fill='%230071e3'/%3E%3Cpath d='M9 21V11l7 5 7-5v10' stroke='white' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/code-block.css" />
-  <link rel="stylesheet" href="assets/css/docs.css" />
-  <link rel="stylesheet" href="assets/css/motion.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"云仓 Yuncang","applicationCategory":"BusinessApplication","operatingSystem":"Web, Windows, macOS, WeChat Mini Program","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"},"license":"https://opensource.org/licenses/Apache 2.0 开源许可","url":"https://yuejiaxinabc.github.io/cloudwarehouse-index/","description":"开源仓储管理系统：商品、入库、出库、调拨、盘点、库位、批次效期、报表预警；Web、Windows/macOS 桌面端与微信小程序三端一致。","softwareVersion":"1.5.3","author":{"@type":"Person","name":"小岳 (xiao yue)"}}</script>
 </head>
 <body>
-
-  <header id="siteHeader" class="site-header header-dark">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="云仓首页">
-        <img class="brand-logo" src="assets/logo.png" alt="云仓 Logo" width="36" height="36">
-        <span class="brand-name">云仓 <span class="brand-sub">Yuncang</span></span>
-      </a>
-
-      <nav class="main-nav" aria-label="主导航">
-        <a href="index.html" class="active" aria-current="page">首页</a>
-        <a href="features.html">产品功能</a>
-        <a href="desktop.html">桌面客户端</a>
-        <a href="manual.html">用户手册</a>
-        <a href="dev.html">开发者手册</a>
-        <a href="install.html">部署安装</a>
-        <a href="releases.html">版本发布</a>
-        <a href="changelog.html">更新日志</a>
-        <a href="privacy.html">隐私政策</a>
-      </nav>
-
-      <div class="header-actions">
-        <a class="btn-github" href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.523 2 12 2z"/></svg>
-          GitHub
-        </a>
-        <a class="btn btn-primary btn-sm" href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 9v3.5a3 3 0 0 0 3 3h5M15.5 15V9"/></svg>
-          Gitee
-        </a>
-        <button id="menuToggle" class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- 移动端展开菜单 -->
-    <div id="mobileMenu" class="mobile-menu">
-      <ul>
-        <li><a href="index.html" class="active" aria-current="page">首页</a></li>
-        <li><a href="features.html">产品功能</a></li>
-        <li><a href="desktop.html">桌面客户端</a></li>
-        <li><a href="install.html">部署安装</a></li>
-        <li><a href="pricing.html">部署服务</a></li>
-        <li><a href="releases.html">版本发布</a></li>
-        <li><a href="changelog.html">更新日志</a></li>
-        <li><a href="security.html">安全日志</a></li>
-        <li class="mobile-cta">
-          <a class="btn btn-outline btn-sm" href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-primary btn-sm" href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a>
-        </li>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="container nav" aria-label="主导航">
+      <a class="logo" href="index.html" aria-label="Yuncang 首页"><span class="logo-mark" aria-hidden="true">云</span> Yuncang</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="desktop.html">桌面端</a></li>
+        <li><a href="client.html">客户端</a></li>
+        <li><a href="manual.html">手册</a></li>
+        <li><a href="dev.html">开发者</a></li>
+        <li><a href="deploy.html">部署</a></li>
+        <li><a class="nav-cta" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
-
   <main>
-    <!-- ===== Hero ===== -->
-    <section class="hero">
+    <section class="hero" aria-label="首屏">
       <div class="container">
-        <div class="eyebrow">
-          <span class="chip chip-brand">Apache 2.0 开源许可</span>
-          <span class="chip">云仓 1.5.3</span>
-          <span class="chip">桌面端 0.6.2</span>
-          <span class="chip">小程序 1.0.9</span>
-          <span class="chip">SDK 1.1.0</span>
+        <span class="hero-badge reveal">v1.5.3 稳定版 · 支持 x86_64 与 ARM64</span>
+        <h1 class="reveal" data-delay="1">把仓库管明白的<br /><span class="gradient-text">自托管开源 WMS</span></h1>
+        <p class="lead reveal" data-delay="2">
+          商品、入库、出库、调拨、盘点、货位、批次效期、报表预警，一套系统。
+          装在你自己的服务器上，数据留在本地 MySQL。
+        </p>
+        <div class="hero-actions reveal" data-delay="3">
+          <a class="btn btn-primary" href="deploy.html">部署安装</a>
+          <a class="btn btn-ghost" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验 →</a>
         </div>
-        <h1 class="title">把仓库装进浏览器，<br/>也装进桌面和手机</h1>
-        <p class="desc">云仓（Yuncang）是面向中小制造、零售与贸易企业的开源仓储管理系统：商品、入库、出库、调拨、盘点、库位、批次效期、报表预警，一条命令部署到你自己的服务器，Web / 桌面 / 小程序三端共用同一套数据与权限。</p>
-        <div class="chip-row">
-          <a class="btn btn-primary btn-lg" href="desktop.html">下载桌面客户端</a>
-          <a class="btn btn-outline btn-lg" href="manual.html">用户手册</a>
-          <a class="btn btn-ghost btn-lg" href="dev.html">开发者手册</a>
-          <a class="btn btn-ghost btn-lg" href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a>
-        </div>
-        <div class="hero-meta">
-          <div><b>8</b><span>核心模块</span></div>
-          <div><b>3</b><span>端：Web / 桌面 / 小程序</span></div>
-          <div><b>17</b><span>开放接口</span></div>
-          <div><b>Apache 2.0 开源许可</b><span>开源许可证</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 为什么是云仓 ===== -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="eyebrow">Why Yuncang</div>
-        <h2 class="title">数据在你自己手里，作业在离货最近的地方</h2>
-        <div class="grid cols-4">
-          <div class="card"><h3>自托管</h3><p>服务端装在你自己的机器上，业务数据全部在本地 MySQL；不依赖任何云账号，内网也能跑。</p></div>
-          <div class="card"><h3>三端一致</h3><p>Web、桌面、小程序共用同一套账号、权限与单据；仓库电脑用桌面端，现场用手机扫。</p></div>
-          <div class="card"><h3>开放接口 + SDK</h3><p>17 个开放接口、API 密钥分级权限、JavaScript / Python / Go 三种 SDK，接自己的 ERP 不用改源码。</p></div>
-          <div class="card"><h3>可控更新</h3><p>自带更新中心：稳定 / 测试双通道、按百分比灰度、SHA256 校验，出问题把灰度调到 0 就停。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 8 大模块 ===== -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="eyebrow">Modules</div>
-        <h2 class="title">仓库日常需要的事，一套系统说清楚</h2>
-        <div class="grid cols-4">
-          <a class="card card-hover" href="features.html"><div class="card-num">01</div><h3>商品主数据</h3><p>编码、条码、单位、分类、安全库存；批量导入 Excel，支持批次与序列号管理。</p></a>
-          <a class="card card-hover" href="features.html"><div class="card-num">02</div><h3>入库作业</h3><p>采购到货、退货入库、其他入库；货位四段坐标、批次号自动生成，支持直接过账。</p></a>
-          <a class="card card-hover" href="features.html"><div class="card-num">03</div><h3>出库作业</h3><p>销售、领料、退货、调拨、维修、更换、其他七种类型，超可用量当场拦下。</p></a>
-          <a class="card card-hover" href="features.html"><div class="card-num">04</div><h3>仓库调拨</h3><p>仓与仓之间转移库存，调出调入双向留痕，单据可追溯到人。</p></a>
-          <a class="card card-hover" href="features.html"><div class="card-num">05</div><h3>库存盘点</h3><p>按仓库生成盘点单，逐项录实盘、自动算差异，结算后库存与账面同步。</p></a>
-          <a class="card card-hover" href="features.html"><div class="card-num">06</div><h3>库位管理</h3><p>仓库→库区→货架→排→列→位多级建模，扫码定位，拣货路径清晰。</p></a>
-          <a class="card card-hover" href="features.html"><div class="card-num">07</div><h3>批次与效期</h3><p>批次、生产日期、到期日全链路；临期预警与先进先出（FEFO）建议。</p></a>
-          <a class="card card-hover" href="features.html"><div class="card-num">08</div><h3>报表与预警</h3><p>库存汇总、库存金额、低库存预警、出入库流水，支持按时间区间导出。</p></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 三端 ===== -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="eyebrow">Clients</div>
-        <h2 class="title">同一套数据，三种作业方式</h2>
-        <div class="grid cols-3">
-          <div class="card">
-            <h3>Web 端</h3>
-            <p>浏览器打开即用：管理员配置、商品建档、报表、审批都在这里；响应式布局，平板可用。</p>
-            <p class="muted">版本 1.5.3</p>
+        <div class="hero-window" id="heroWindow">
+          <div class="hero-window-bar" aria-hidden="true">
+            <span class="dot" style="background:#ff5f57"></span>
+            <span class="dot" style="background:#febc2e"></span>
+            <span class="dot" style="background:#28c840"></span>
           </div>
-          <div class="card">
-            <h3>桌面客户端</h3>
-            <p>Windows / macOS（Apple 芯片与 Intel），填一次服务器地址与密钥，双击进工作台；入库、出库、调拨、盘点、库存查询。</p>
-            <p class="muted">版本 0.6.2 · 三平台 dmg / exe</p>
-            <p><a href="desktop.html">下载与安装说明 →</a></p>
-          </div>
-          <div class="card">
-            <h3>微信小程序</h3>
-            <p>仓库现场扫码作业：入库、出库、盘点、库存查询，账号密码登录，权限与网页端一致。</p>
-            <p class="muted">版本 1.0.9</p>
+          <div class="hero-window-body">
+            <span class="cmt"># x86_64</span><br />
+            curl -fsSL https://update.yuejiaxin.ln.cn/<span class="str">install.sh</span> | sudo bash<br /><br />
+            <span class="cmt"># ARM64</span><br />
+            curl -fsSL https://update.yuejiaxin.ln.cn/<span class="str">install-arm64.sh</span> | sudo bash
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 部署 ===== -->
-    <section class="section band-dark">
-      <div class="container">
-        <div class="eyebrow">Deploy</div>
-        <h2 class="title">一条命令，装进你自己的服务器</h2>
-        <p class="desc">干净的 Linux（Ubuntu 22.04 / Debian 12，2 核 4G 起）。脚本自动装 Node 20、MySQL、nginx，建库建表、生成密钥、配置 systemd 与反向代理，装完浏览器打开就能用。</p>
-        <pre class="code-block"><code>curl -fsSL https://yuejiaxin.ln.cn/install.sh | sudo bash</code></pre>
-        <p class="desc">装完访问 <code class="mono">http://你的服务器地址</code> 设置管理员账号。完整步骤见 <a href="install.html">部署安装</a>。</p>
-      </div>
-    </section>
-
-    <!-- ===== 开放接口与 SDK ===== -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="eyebrow">API &amp; SDK</div>
-        <h2 class="title">接自己的系统，不用改云仓源码</h2>
-        <p class="desc">17 个开放接口覆盖商品、库存、批次、单据、报表与四类作业；API 密钥可绑定权限（scope）、仓库范围、IP 白名单与「仅 HTTPS」。官方 SDK 处理了鉴权、幂等键、429/5xx 退避重试、分页与错误码。</p>
-        <div class="grid cols-3">
-          <div class="card"><h3>JavaScript / TS</h3><p class="muted">Node · 浏览器 · 微信小程序</p><pre class="code-block"><code>npm i yuncang-sdk</code></pre></div>
-          <div class="card"><h3>Python</h3><p class="muted">3.8+</p><pre class="code-block"><code>pip install ./python</code></pre></div>
-          <div class="card"><h3>Go</h3><p class="muted">1.21+</p><pre class="code-block"><code>go get github.com/yuejiaxinabc/Yuncang-SDK/go</code></pre></div>
-        </div>
-        <div class="chip-row"><a class="btn btn-outline" href="dev.html">开发者手册</a><a class="btn btn-ghost" href="https://github.com/yuejiaxinabc/Yuncang-SDK" target="_blank" rel="noopener">SDK 源码</a></div>
-      </div>
-    </section>
-
-    <!-- ===== 更新中心 ===== -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="eyebrow">Update</div>
-        <h2 class="title">更新怎么发到你手上</h2>
-        <p class="desc">服务端每小时向更新中心上报一次心跳（版本、通道、端口、域名、主机名、出口 IP），控制台据此判断设备是否需要升级；桌面端与小程序按平台拉取清单，从最近的节点下载并校验 SHA256 后安装。</p>
-        <div class="grid cols-3">
-          <div class="card"><h3>稳定通道</h3><p>默认通道，所有设备收到；只推送验证过的版本。</p></div>
-          <div class="card"><h3>测试通道</h3><p>先小范围验证，设备在设置里切到测试通道即可收到，不影响其他人。</p></div>
-          <div class="card"><h3>灰度发布</h3><p>按百分比放量：先 10%，观察一天再全量；异常时调到 0 立刻暂停。</p></div>
-        </div>
-        <p class="desc">心跳上报哪些字段、能不能关，写在 <a href="privacy.html">隐私政策</a> 第二节。</p>
-      </div>
-    </section>
-
-    <!-- ===== 截图 ===== -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="eyebrow">Screens</div>
-        <h2 class="title">界面长什么样</h2>
-        <div class="grid cols-3">
-          <a class="card card-hover" href="assets/img/desktop/overview.png" target="_blank" rel="noopener"><img src="assets/img/desktop/overview.png" alt="云仓桌面端工作台" style="width:100%;border-radius:12px;border:1px solid #E2E8F0" loading="lazy" /><p class="muted" style="margin-top:.6rem">工作台 · 库存概览与快捷作业</p></a>
-          <a class="card card-hover" href="assets/img/desktop/inbound.png" target="_blank" rel="noopener"><img src="assets/img/desktop/inbound.png" alt="入库作业界面" style="width:100%;border-radius:12px;border:1px solid #E2E8F0" loading="lazy" /><p class="muted" style="margin-top:.6rem">入库作业 · 四段货位与批次</p></a>
-          <a class="card card-hover" href="assets/img/desktop/settings.png" target="_blank" rel="noopener"><img src="assets/img/desktop/settings.png" alt="连接设置与更新" style="width:100%;border-radius:12px;border:1px solid #E2E8F0" loading="lazy" /><p class="muted" style="margin-top:.6rem">设置 · 服务器地址、密钥与更新</p></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 文档 ===== -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="eyebrow">Docs</div>
-        <h2 class="title">文档</h2>
-        <div class="grid cols-4">
-          <a class="card card-hover" href="manual.html"><h3>用户手册</h3><p>安装、首次配置、日常作业、权限说明、盘点流程、常见问题。</p></a>
-          <a class="card card-hover" href="dev.html"><h3>开发者手册</h3><p>开放接口、API 密钥、多语言 SDK、错误码、更新协议与心跳机制。</p></a>
-          <a class="card card-hover" href="releases.html"><h3>版本发布</h3><p>各端当前版本、安装包、更新通道与 SHA256 校验。</p></a>
-          <a class="card card-hover" href="privacy.html"><h3>隐私政策</h3><p>本地保存什么、心跳上报什么、怎么关、怎么删。</p></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FAQ ===== -->
-    <section class="section reveal">
-      <div class="container">
-        <div class="eyebrow">FAQ</div>
-        <h2 class="title">常见问题</h2>
-        <div class="grid cols-2">
-          <div class="card"><h3>必须联网吗？</h3><p>服务端在你自己的机器上，内网也能用；只有「检查更新」需要访问更新中心，离线部署可关闭心跳。</p></div>
-          <div class="card"><h3>数据存在哪？</h3><p>全部在你自己的 MySQL 里，云仓不收集业务数据。见 <a href="privacy.html">隐私政策</a>。</p></div>
-          <div class="card"><h3>能对接自己的系统吗？</h3><p>可以。17 个开放接口 + 三种语言 SDK，见 <a href="dev.html">开发者手册</a>。</p></div>
-          <div class="card"><h3>多人同时用会冲突吗？</h3><p>密钥带权限与仓库范围，写操作带幂等键；并发建单不会重复扣减库存。</p></div>
-          <div class="card"><h3>换服务器怎么办？</h3><p>备份 MySQL 与上传目录即可迁移；桌面端和小程序在设置里改地址就能继续用。</p></div>
-          <div class="card"><h3>要买什么许可证吗？</h3><p>Apache 2.0 开源许可，自用与商用都免费。需要人帮忙部署可以看 <a href="pricing.html">部署服务</a>。</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CTA ===== -->
     <section class="section">
       <div class="container">
-        <div class="cta-band">
-          <h2 class="title" style="margin:0 0 .6rem">十分钟，把仓库跑起来</h2>
-          <p class="desc" style="margin-bottom:1.4rem">一条命令部署服务端，再挑一个顺手的客户端。</p>
-          <div class="chip-row">
-            <a class="btn btn-primary btn-lg" href="install.html">开始部署</a>
-            <a class="btn btn-light btn-lg" href="desktop.html">下载桌面端</a>
-            <a class="btn btn-outline btn-lg" href="manual.html" style="border-color:rgba(255,255,255,.55);color:#fff">先看看手册</a>
-          </div>
+        <div class="feature-grid">
+          <a class="feature-card reveal" href="desktop.html">
+            <div class="feature-icon">🖥️</div>
+            <h3>桌面端</h3>
+            <p>Windows 与 macOS，填一次服务器地址与密钥就能进工作台；支持扫码枪与标签打印。</p>
+            <p style="margin-top:12px;color:var(--primary)">下载与安装 →</p>
+          </a>
+          <a class="feature-card reveal" data-delay="1" href="client.html">
+            <div class="feature-icon">🌐</div>
+            <h3>客户端</h3>
+            <p>Web 浏览器直接打开，微信小程序现场扫码作业，权限与数据完全一致。</p>
+            <p style="margin-top:12px;color:var(--primary)">两种打开方式 →</p>
+          </a>
+          <a class="feature-card reveal" data-delay="2" href="deploy.html">
+            <div class="feature-icon">🚀</div>
+            <h3>部署安装</h3>
+            <p>x86_64 用 <code>install.sh</code>，ARM64 用 <code>install-arm64.sh</code>，也支持离线包。</p>
+            <p style="margin-top:12px;color:var(--primary)">两套指令 →</p>
+          </a>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="云仓首页">
-            <img class="brand-logo" src="assets/logo.png" alt="云仓 Logo" width="36" height="36">
-            <span class="brand-name">云仓 <span class="brand-sub">Yuncang</span></span>
-          </a>
-          <p>面向中小企业的开源全链路库存管理系统。一条命令部署，浏览器打开即用，仓库全流程可追溯。</p>
-          <div class="footer-social">
-            <a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.523 2 12 2z"/></svg>
-              GitHub
-            </a>
-            <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 9v3.5a3 3 0 0 0 3 3h5M15.5 15V9"/></svg>
-              Gitee
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>页面导航</h4>
-          <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="features.html">产品功能</a></li>
-            <li><a href="desktop.html">桌面客户端</a></li>
-            <li><a href="install.html">部署安装</a></li>
-            <li><a href="pricing.html">部署服务</a></li>
-            <li><a href="releases.html">版本发布</a></li>
-            <li><a href="changelog.html">更新日志</a></li>
-            <li><a href="security.html">安全日志</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>项目文档</h4>
-          <ul>
-            <li><a href="https://yc.yuejiaxin.ln.cn/" target="_blank" rel="noopener">在线演示 ↗</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/README.md" target="_blank" rel="noopener">README</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/SECURITY.md" target="_blank" rel="noopener">SECURITY</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/DEPLOYMENT.md" target="_blank" rel="noopener">DEPLOYMENT</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang-MiniProgram" target="_blank" rel="noopener">微信小程序端</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/LICENSE" target="_blank" rel="noopener">Apache 2.0 开源许可 许可证</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="year">2026</span> 小岳 (xiao yue) · 基于 Apache 2.0 开源许可 许可证开源</p>
-        <p>云仓 · Yuncang Inventory Management · 当前版本 v1.5.3</p>
+      <div class="footer-bottom" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <span>© 2026 Yuncang · Apache 2.0 License</span>
+        <span><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></span>
       </div>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/motion.js"></script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>部署安装 · 云仓</title>
+  <meta name="description" content="云仓部署：x86_64 用 install.sh，ARM64 用 install-arm64.sh；也支持离线安装包。" />
+  <meta name="author" content="Yuncang" />
+  <meta name="theme-color" content="#fbfbfd" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='9' fill='%230071e3'/%3E%3Cpath d='M9 21V11l7 5 7-5v10' stroke='white' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="container nav" aria-label="主导航">
+      <a class="logo" href="index.html" aria-label="Yuncang 首页"><span class="logo-mark" aria-hidden="true">云</span> Yuncang</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="desktop.html">桌面端</a></li>
+        <li><a href="client.html">客户端</a></li>
+        <li><a href="manual.html">手册</a></li>
+        <li><a href="dev.html">开发者</a></li>
+        <li><a href="deploy.html">部署</a></li>
+        <li><a class="nav-cta" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><span>部署安装</span></nav>
+        <h1>部署安装</h1>
+        <p class="lead">按 CPU 架构选脚本：<code>uname -m</code> 输出 <code>x86_64</code> 用上面那条，<code>aarch64</code> 用下面那条。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">x86_64</span><h2>x86_64 / AMD64</h2>
+          <p>Intel、AMD、普通云服务器（<code>uname -m</code> 为 <code>x86_64</code>）。</p>
+        </div>
+        <div class="hero-window" style="margin:0">
+          <div class="hero-window-bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span></div>
+          <div class="hero-window-body">curl -fsSL https://update.yuejiaxin.ln.cn/<span class="str">install.sh</span> | sudo bash</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">ARM64</span><h2>ARM64 / aarch64</h2>
+          <p>鲲鹏、倚天、Apple 虚拟化、ARM 云实例（<code>uname -m</code> 为 <code>aarch64</code>）。</p>
+        </div>
+        <div class="hero-window" style="margin:0">
+          <div class="hero-window-bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span></div>
+          <div class="hero-window-body">curl -fsSL https://update.yuejiaxin.ln.cn/<span class="str">install-arm64.sh</span> | sudo bash</div>
+        </div>
+        <p style="margin-top:16px;color:var(--text-dim);font-size:.92rem">armv7l（32 位 ARM）不支持：Prisma 没有 armv7 查询引擎。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Offline</span><h2>离线安装（内网 / 无外网）</h2></div>
+        <div class="split">
+          <article class="panel reveal">
+            <h3>x86_64</h3>
+            <div class="hero-window" style="margin-top:10px"><div class="hero-window-body">
+              tar xzf 云仓服务端-1.5.3-离线安装包.tar.gz<br />
+              cd cloudwarehouse &amp;&amp; sudo bash install.sh --offline
+            </div></div>
+          </article>
+          <article class="panel reveal" data-delay="1">
+            <h3>ARM64</h3>
+            <div class="hero-window" style="margin-top:10px"><div class="hero-window-body">
+              tar xzf 云仓服务端-1.5.3-离线安装包-arm64.tar.gz<br />
+              cd cloudwarehouse &amp;&amp; sudo bash install.sh --offline
+            </div></div>
+          </article>
+        </div>
+        <p style="margin-top:18px">离线包下载：<a href="https://github.com/yuejiaxinabc/Yuncang-Update/releases" target="_blank" rel="noopener">Yuncang-Update Releases</a></p>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">After Install</span><h2>装完做什么</h2></div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><div class="feature-icon">🌐</div><h3>打开后台</h3><p><code>http://服务器IP/</code>，初始账号 <code>admin</code> / <code>Admin@123</code>，登录后立即改密。</p></article>
+          <article class="feature-card reveal" data-delay="1"><div class="feature-icon">🔒</div><h3>配 HTTPS</h3><p>设置 →「域名与 HTTPS」填域名一键申请证书；纯 IP 装机会自动配自签 HTTPS。</p></article>
+          <article class="feature-card reveal" data-delay="2"><div class="feature-icon">💾</div><h3>备份与更新</h3><p>设置 →「数据备份」立即备份 / 恢复 / 下载；「检查更新」自助升级。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <span>© 2026 Yuncang · Apache 2.0 License</span>
+        <span><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>客户端 · 云仓</title>
+  <meta name="description" content="云仓客户端：浏览器打开即用的 Web 主控台，以及现场扫码作业的微信小程序。" />
+  <meta name="author" content="Yuncang" />
+  <meta name="theme-color" content="#fbfbfd" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='9' fill='%230071e3'/%3E%3Cpath d='M9 21V11l7 5 7-5v10' stroke='white' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="container nav" aria-label="主导航">
+      <a class="logo" href="index.html" aria-label="Yuncang 首页"><span class="logo-mark" aria-hidden="true">云</span> Yuncang</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="desktop.html">桌面端</a></li>
+        <li><a href="client.html">客户端</a></li>
+        <li><a href="manual.html">手册</a></li>
+        <li><a href="dev.html">开发者</a></li>
+        <li><a href="deploy.html">部署</a></li>
+        <li><a class="nav-cta" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><span>客户端</span></nav>
+        <h1>客户端</h1>
+        <p class="lead">同一套数据与权限，两种打开方式。</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="split">
+          <article class="panel reveal">
+            <h3>🌐 Web 主控台</h3>
+            <p>浏览器打开 <code>http://服务器IP/</code> 即用，不用装任何东西。</p>
+            <p>管理员配置、商品建档、单据、报表、备份都在这里；响应式布局，平板可用。</p>
+            <p style="margin-top:14px"><a class="btn btn-primary btn-sm" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></p>
+          </article>
+          <article class="panel reveal" data-delay="1">
+            <h3>📱 微信小程序</h3>
+            <p>现场扫码作业：入库、出库、盘点、库存查询，账号密码登录，权限与网页端一致。</p>
+            <p>用微信开发者工具导入源码，填自己的服务器地址与 API 密钥即可。</p>
+            <p style="margin-top:14px"><a class="btn btn-ghost btn-sm" href="https://github.com/yuejiaxinabc/Yuncang-MiniProgram" target="_blank" rel="noopener">小程序源码 →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal"><span class="eyebrow">Compare</span><h2>什么时候用哪个</h2></div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><div class="feature-icon">🗂️</div><h3>Web</h3><p>建档、配置、报表、审批、备份——管理工作全在浏览器。</p></article>
+          <article class="feature-card reveal" data-delay="1"><div class="feature-icon">📲</div><h3>小程序</h3><p>仓库现场：拿手机扫一下就入库、盘点、查库存，不用回电脑。</p></article>
+          <article class="feature-card reveal" data-delay="2"><div class="feature-icon">💻</div><h3>桌面端</h3><p>需要扫码枪、标签打印、长时间作业时用桌面端，见 <a href="desktop.html">桌面端</a>。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <span>© 2026 Yuncang · Apache 2.0 License</span>
+        <span><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

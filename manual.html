@@ -4,227 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>用户手册 · 云仓</title>
-  <meta name="description" content="云仓用户手册：安装、首次配置、入库出库调拨盘点、权限说明、更新备份与常见问题。" />
-  <meta name="author" content="小岳 (xiao yue)" />
-  <link rel="canonical" href="https://yuejiaxinabc.github.io/cloudwarehouse-index/manual.html" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <meta name="description" content="云仓用户手册：商品建档、入库、出库、调拨、盘点、报表、权限的常用操作流程。" />
+  <meta name="author" content="Yuncang" />
+  <meta name="theme-color" content="#fbfbfd" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='9' fill='%230071e3'/%3E%3Cpath d='M9 21V11l7 5 7-5v10' stroke='white' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="assets/css/docs.css" />
-  <link rel="stylesheet" href="assets/css/code-block.css" />
 </head>
 <body>
-
-  <header id="siteHeader" class="site-header header-dark">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="云仓首页">
-        <img class="brand-logo" src="assets/logo.png" alt="云仓 Logo" width="36" height="36">
-        <span class="brand-name">云仓 <span class="brand-sub">Yuncang</span></span>
-      </a>
-
-      <nav class="main-nav" aria-label="主导航">
-        <a href="index.html">首页</a>
-        <a href="features.html">产品功能</a>
-        <a href="desktop.html">桌面客户端</a>
-        <a href="manual.html" class="active" aria-current="page">用户手册</a>
-        <a href="dev.html">开发者手册</a>
-        <a href="install.html">部署安装</a>
-        <a href="releases.html">版本发布</a>
-        <a href="changelog.html">更新日志</a>
-        <a href="privacy.html">隐私政策</a>
-      </nav>
-
-      <div class="header-actions">
-        <a class="btn-github" href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.523 2 12 2z"/></svg>
-          GitHub
-        </a>
-        <a class="btn btn-primary btn-sm" href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 9v3.5a3 3 0 0 0 3 3h5M15.5 15V9"/></svg>
-          Gitee
-        </a>
-        <button id="menuToggle" class="menu-toggle" aria-label="打开菜单" aria-expanded="false" aria-controls="mobileMenu">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- 移动端展开菜单 -->
-    <div id="mobileMenu" class="mobile-menu">
-      <ul>
-        <li><a href="index.html" class="active" aria-current="page">首页</a></li>
-        <li><a href="features.html">产品功能</a></li>
-        <li><a href="desktop.html">桌面客户端</a></li>
-        <li><a href="install.html">部署安装</a></li>
-        <li><a href="pricing.html">部署服务</a></li>
-        <li><a href="releases.html">版本发布</a></li>
-        <li><a href="changelog.html">更新日志</a></li>
-        <li><a href="security.html">安全日志</a></li>
-        <li class="mobile-cta">
-          <a class="btn btn-outline btn-sm" href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn btn-primary btn-sm" href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a>
-        </li>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="container nav" aria-label="主导航">
+      <a class="logo" href="index.html" aria-label="云仓首页"><span class="logo-mark" aria-hidden="true">云</span> Yuncang</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="desktop.html">桌面端</a></li>
+        <li><a href="client.html">客户端</a></li>
+        <li><a href="manual.html">手册</a></li>
+        <li><a href="dev.html">开发者</a></li>
+        <li><a href="deploy.html">部署</a></li>
+        <li><a class="nav-cta" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
-
   <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><span>用户手册</span></nav>
+        <h1>用户手册</h1>
+        <p class="lead">上手要用的流程都在这里。</p>
+      </div>
+    </section>
     <section class="section">
       <div class="container">
-        <div class="eyebrow">User Manual</div>
-        <h1 class="title">云仓用户手册</h1>
-        <p class="desc">面向仓库管理员与作业人员：从装好系统到每天怎么用。开发者请看 <a href="dev.html">开发者手册</a>。</p>
-        <div class="callout"><b>阅读顺序</b><p>第一次部署 → 第 1 节；第一次登录 → 第 2 节；每天要做的事 → 第 3 节；遇到问题 → 第 6 节。</p></div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><div class="feature-icon">📋</div><h3>商品建档</h3><p>编码、名称、单位、分类必填；条码、规格、品牌、安全库存可选。批量导入用 Excel 模板，表头与系统一致。</p></article>
+          <article class="feature-card reveal" data-delay="1"><div class="feature-icon">📥</div><h3>入库</h3><p>选仓库与货位 → 加商品行 → 填数量与批次 → 提交。可直接过账，也可先存草稿。</p></article>
+          <article class="feature-card reveal" data-delay="2"><div class="feature-icon">📤</div><h3>出库</h3><p>选类型（销售 / 领料 / 退货 / 调拨 / 维修 / 更换 / 其他）→ 选商品 → 超出可用量当场拦下。</p></article>
+          <article class="feature-card reveal"><div class="feature-icon">🔀</div><h3>调拨</h3><p>选调出仓与调入仓 → 加商品 → 提交。调出调入双向留痕，单据可追溯到人。</p></article>
+          <article class="feature-card reveal" data-delay="1"><div class="feature-icon">🧮</div><h3>盘点</h3><p>按仓库生成盘点单 → 逐项录实盘 → 系统算差异 → 结算后库存与账面同步。</p></article>
+          <article class="feature-card reveal" data-delay="2"><div class="feature-icon">📊</div><h3>报表</h3><p>库存汇总、库存金额、低库存预警、出入库趋势；按时间区间筛选并导出。</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-alt">
       <div class="container">
-        <h2 class="title">1. 安装</h2>
-        <h3>1.1 服务端（一台 Linux 机器）</h3>
-        <pre class="code-block"><code>curl -fsSL https://yuejiaxin.ln.cn/install.sh | sudo bash</code></pre>
-        <p class="desc">脚本会装好 Node 20、MySQL、nginx，建库建表、生成密钥、配置 systemd 与反向代理。装完浏览器打开服务器地址即可。要求：Ubuntu 22.04 / Debian 12 及以上，2 核 4G 起。</p>
-        <h3>1.2 桌面客户端（Windows / macOS）</h3>
-        <p class="desc">从 <a href="desktop.html">桌面客户端</a> 页下载对应平台的安装包：Windows x64、macOS Apple 芯片、macOS Intel。安装后第一次打开填两项：<b>服务器地址</b>（如 <code class="mono">https://yc.example.com</code>）与 <b>API 密钥</b>（云仓后台 → 设置 → API 管理 生成），测试通过即保存，之后双击图标直接进工作台。</p>
-        <h3>1.3 微信小程序</h3>
-        <p class="desc">用手机号或账号密码登录（与网页端同一套账号）。注意公众号后台需要把云仓域名加入「request 合法域名」。</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="title">2. 第一次登录后要做的四件事</h2>
-        <div class="grid cols-2">
-          <div class="card"><h3>① 建仓库</h3><p>系统设置 → 仓库管理 → 新增，填编码与名称；按需设置库区、货架、排、列、位层级，用于生成四段货位编码。</p></div>
-          <div class="card"><h3>② 建商品</h3><p>商品管理 → 新增，或批量导入 Excel（表头：编码、名称、条码、单位、分类）。启用批次看效期，启用序列号看单件追溯。</p></div>
-          <div class="card"><h3>③ 配账号与角色</h3><p>系统设置 → 用户管理：管理员、仓管、只读三种角色；可限定某个账号只能操作指定仓库。</p></div>
-          <div class="card"><h3>④ 生成 API 密钥</h3><p>设置 → API 管理 → 新建，勾选需要的权限（scope）与仓库范围。密钥明文只显示一次，丢了只能重建。</p></div>
+        <div class="section-head reveal"><span class="eyebrow">Admin</span><h2>管理员常用</h2></div>
+        <div class="split">
+          <article class="panel reveal"><h3>用户与角色</h3><p>角色决定能看哪些菜单，仓库范围决定能操作哪些仓库；两层同时生效。</p></article>
+          <article class="panel reveal" data-delay="1"><h3>安全设置</h3><p>可开启两步验证；连续登录失败会锁定，密码强度有校验。</p></article>
+        </div>
+        <div class="split" style="margin-top:20px">
+          <article class="panel reveal"><h3>数据备份</h3><p>设置 →「数据备份」：立即备份、恢复、下载、设置保留策略。</p></article>
+          <article class="panel reveal" data-delay="1"><h3>域名与证书</h3><p>设置 →「域名与 HTTPS」：填域名一键申请证书，也可粘贴自有证书。</p></article>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container">
-        <h2 class="title">3. 日常作业</h2>
-        <h3>3.1 入库</h3>
-        <ol>
-          <li>选仓库 → 选类型（采购入库 / 退货入库 / 其他入库）→ 选供应商（可选）。</li>
-          <li>扫商品条码或搜索加行；数量、成本价、批次号（桌面端自动生成，如 <code class="mono">B20261115-A1</code>）、放置货位（四段：货架-排-列-位）。</li>
-          <li>勾选「直接入账」提交后库存立即增加；不勾只生成草稿单，稍后过账。</li>
-        </ol>
-        <h3>3.2 出库</h3>
-        <p class="desc">七种类型：销售、领料、退货、调拨、维修、更换、其他。加商品时系统会显示该仓可用量，填超了在提交前就拦住。库存不足时服务端会拒绝过账，单据保留为草稿并给出原因。</p>
-        <h3>3.3 调拨</h3>
-        <p class="desc">选调出仓与调入仓，加商品与数量。调拨不改变总库存，只改变归属；两个仓库都会留流水。</p>
-        <h3>3.4 盘点</h3>
-        <ol>
-          <li>盘点页选仓库，生成盘点单（默认带出该仓所有在库商品）。</li>
-          <li>逐项录实盘数，系统自动算差异（实盘 − 账面）。</li>
-          <li>全部录完后点「结算」，库存按实盘数校正，差异写入流水。</li>
-          <li>桌面端可在生成盘点单后导出 Excel 盘点表，现场填完再回后台录入。</li>
-        </ol>
-        <h3>3.5 库存查询与单据记录</h3>
-        <p class="desc">库存查询支持按仓库、商品关键词过滤，显示在库、可用、锁定数量；单据记录可按类型与时间区间检索，点开看明细与操作人。</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="title">4. 权限是怎么起作用的</h2>
-        <div class="callout"><b>一句话</b><p>界面上出现哪些作业，由你登录账号的角色决定；桌面端与 SDK 能做什么，由那把 API 密钥勾选的权限决定。两者互不替代。</p></div>
-        <div class="grid cols-3">
-          <div class="card"><h3>管理员</h3><p>全部模块 + 系统设置 + 用户与密钥管理。</p></div>
-          <div class="card"><h3>仓管</h3><p>入库、出库、调拨、盘点、库存查询；不能改系统配置。</p></div>
-          <div class="card"><h3>只读</h3><p>只能查库存与单据，不能建单。</p></div>
-        </div>
-        <p class="desc">密钥权限（scope）常见组合：<code class="mono">product:read</code>、<code class="mono">inventory:read</code>、<code class="mono">warehouse:read</code>、<code class="mono">stock:read</code>、<code class="mono">stock:write</code>、<code class="mono">order:read</code>、<code class="mono">lot:read</code>。写作业需要 <code class="mono">stock:write</code>，桌面端还会额外要求 <code class="mono">warehouse:read</code> 与 <code class="mono">product:read</code> 以便带出仓库与商品。</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="title">5. 更新、备份与卸载</h2>
-        <h3>5.1 更新</h3>
-        <p class="desc">服务端：管理员在「系统设置 → 版本更新」里检查并安装，或在更新通道里切到测试版先验证。桌面端：设置 → 检查更新，自动探测最近下载源、校验 SHA256 后安装。小程序：随微信版本热更新，无需操作。</p>
-        <h3>5.2 备份</h3>
-        <pre class="code-block"><code># 建议每天一次，保留 14 天
-mysqldump --single-transaction -u root -p cloud_warehouse | gzip &gt; /backup/cw-$(date +%F).sql.gz</code></pre>
-        <h3>5.3 卸载</h3>
-        <p class="desc">桌面端在设置页点「卸载云仓」，或从 Windows「设置 → 应用」卸载；卸载会一并删除本机配置（服务器地址与密钥）、缓存与快捷方式。服务端卸载见 <a href="install.html">部署安装</a> 页末尾。</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="title">6. 常见问题</h2>
-        <div class="grid cols-2">
-          <div class="card"><h3>库存和实际不一致</h3><p>先看单据记录里有没有未过账的草稿单；再对最近一次盘点做一次小范围复盘。盘点结算会以实盘为准校正。</p></div>
-          <div class="card"><h3>出库提示库存不足</h3><p>可用量 = 在库 − 已锁定。检查是否有待出库单占用了库存，或该商品在别的仓库。</p></div>
-          <div class="card"><h3>桌面端提示密钥失效</h3><p>密钥被删除、过期或 IP 不在白名单。到云仓后台重新生成，或把当前出口 IP 加进白名单。</p></div>
-          <div class="card"><h3>提示要求 HTTPS</h3><p>该密钥开启了「仅 HTTPS」策略。给服务器配域名与证书，或让管理员放行内网网段。</p></div>
-          <div class="card"><h3>导入 Excel 没反应</h3><p>表头要包含「编码、名称」（或 code、name），第一行是表头；xlsx 与 csv 都支持。</p></div>
-          <div class="card"><h3>忘记管理员密码</h3><p>在服务器上执行重置脚本，或用另一个管理员账号在用户管理里重置。</p></div>
+      <div class="container" style="max-width:56rem">
+        <div class="panel reveal">
+          <h3>常见问题</h3>
+          <p><b>登录报验证码错误？</b>点验证码图片刷新，注意大小写。</p>
+          <p><b>导入 Excel 报表头不匹配？</b>用系统里的模板导出，别改列顺序与表头文字。</p>
+          <p><b>出库提示库存不足？</b>检查所选仓库与货位是否有可用量，批次是否选错。</p>
+          <p><b>面板点更新报错？</b>确认服务以 <code>cloudwarehouse</code> 用户运行、<code>backups/update-work</code> 可写；或直接跑 <code>install.sh --upgrade</code>。</p>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="云仓首页">
-            <img class="brand-logo" src="assets/logo.png" alt="云仓 Logo" width="36" height="36">
-            <span class="brand-name">云仓 <span class="brand-sub">Yuncang</span></span>
-          </a>
-          <p>面向中小企业的开源全链路库存管理系统。一条命令部署，浏览器打开即用，仓库全流程可追溯。</p>
-          <div class="footer-social">
-            <a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0022 12.017C22 6.484 17.523 2 12 2z"/></svg>
-              GitHub
-            </a>
-            <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.5 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM18 6.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0zM6.5 9v3.5a3 3 0 0 0 3 3h5M15.5 15V9"/></svg>
-              Gitee
-            </a>
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>页面导航</h4>
-          <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="features.html">产品功能</a></li>
-            <li><a href="desktop.html">桌面客户端</a></li>
-            <li><a href="install.html">部署安装</a></li>
-            <li><a href="pricing.html">部署服务</a></li>
-            <li><a href="releases.html">版本发布</a></li>
-            <li><a href="changelog.html">更新日志</a></li>
-            <li><a href="security.html">安全日志</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>项目文档</h4>
-          <ul>
-            <li><a href="https://yc.yuejiaxin.ln.cn/" target="_blank" rel="noopener">在线演示 ↗</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/README.md" target="_blank" rel="noopener">README</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/SECURITY.md" target="_blank" rel="noopener">SECURITY</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/docs/DEPLOYMENT.md" target="_blank" rel="noopener">DEPLOYMENT</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang-MiniProgram" target="_blank" rel="noopener">微信小程序端</a></li>
-            <li><a href="https://github.com/yuejiaxinabc/Yuncang/blob/main/LICENSE" target="_blank" rel="noopener">Apache 2.0 开源许可 许可证</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="year">2026</span> 小岳 (xiao yue) · 基于 Apache 2.0 开源许可 许可证开源</p>
-        <p>云仓 · Yuncang Inventory Management · 当前版本 v1.5.3</p>
+      <div class="footer-bottom" style="justify-content:space-between;flex-wrap:wrap;gap:12px">
+        <span>© 2026 Yuncang · Apache 2.0 License</span>
+        <span><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></span>
       </div>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
 </body>
 </html>
