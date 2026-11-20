@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>关于 · 云仓</title>
+  <meta name="description" content="关于云仓（Yuncang）：自托管的开源仓储管理系统，Apache 2.0 许可，六个开源仓库，Web / 桌面 / 小程序三端一致。" />
+  <meta name="author" content="Yuncang" />
+  <meta name="theme-color" content="#fbfbfd" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/apple.css" />
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="container nav" aria-label="主导航">
+      <a class="logo" href="index.html" aria-label="云仓首页"><img class="logo-img" src="assets/logo-mark.png" alt="Yuncang" /> Yuncang</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+            <ul class="nav-links" id="navLinks">
+        <li><a href="desktop.html">桌面端</a></li>
+        <li><a href="client.html">客户端</a></li>
+        <li><a href="vm.html">镜像</a></li>
+        <li><a href="manual.html">手册</a></li>
+        <li><a href="dev.html">开发者</a></li>
+        <li><a href="deploy.html">部署</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a class="nav-cta" href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">在线体验</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb"><a href="index.html">首页</a><span>/</span><span>关于</span></nav>
+        <h1>关于云仓</h1>
+        <p class="lead">让仓库的数据留在自己的服务器上。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width:56rem">
+        <div class="split">
+          <article class="panel reveal">
+            <h3>这是什么</h3>
+            <p>云仓（Yuncang）是一套自托管的仓储管理系统。商品、入库、出库、调拨、盘点、货位、批次效期、报表预警在同一套数据里，Web 主控台、桌面客户端、微信小程序三种作业方式共用同一套权限。</p>
+          </article>
+          <article class="panel reveal" data-delay="1">
+            <h3>面向谁</h3>
+            <p>中小制造、零售与贸易企业。不需要买订阅，不需要把库存数据交给第三方，装在自己的服务器或虚拟机里即可。</p>
+          </article>
+        </div>
+        <div class="split" style="margin-top:24px">
+          <article class="panel reveal">
+            <h3>技术栈</h3>
+            <p>Next.js 14 + TypeScript + Ant Design 5 + Prisma + MySQL；桌面端 Electron；小程序原生；SDK 提供 JavaScript / Python / Go 三种实现。</p>
+          </article>
+          <article class="panel reveal" data-delay="1">
+            <h3>许可</h3>
+            <p><a href="https://opensource.org/licenses/Apache-2.0" target="_blank" rel="noopener">Apache License 2.0</a>：可商用、可修改、可分发、可私有化部署，专利授权一并授予；保留版权声明与许可文本即可。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Versions</span>
+          <h2>当前版本</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🧱</div><h3>服务端</h3><p style="font-size:1.3rem;font-weight:700">1.5.3</p><p>稳定版 · 测试版 1.5.3.2</p></article>
+          <article class="feature-card reveal" data-delay="1"><div class="feature-icon" aria-hidden="true">🖥️</div><h3>桌面端</h3><p style="font-size:1.3rem;font-weight:700">0.6.2</p><p>Windows x64</p></article>
+          <article class="feature-card reveal" data-delay="2"><div class="feature-icon" aria-hidden="true">📱</div><h3>小程序</h3><p style="font-size:1.3rem;font-weight:700">1.0.9</p><p>微信 · 扫码作业</p></article>
+          <article class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🔌</div><h3>SDK</h3><p style="font-size:1.3rem;font-weight:700">1.1.1</p><p>JS / Python / Go</p></article>
+          <article class="feature-card reveal" data-delay="1"><div class="feature-icon" aria-hidden="true">💾</div><h3>镜像</h3><p style="font-size:1.3rem;font-weight:700">ARM 1.5.3</p><p>x86 1.5.2 · 可升级</p></article>
+          <article class="feature-card reveal" data-delay="2"><div class="feature-icon" aria-hidden="true">🌐</div><h3>官网</h3><p style="font-size:1.3rem;font-weight:700">1.5.3</p><p>本页</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Repositories</span>
+          <h2>六个仓库，两个平台</h2>
+          <p>GitHub 与 Gitee 同名，代码与 Release 同步维护；国内下载走 Gitee，海外走 GitHub。</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">🧱</div>
+            <h3>Yuncang</h3>
+            <p>服务端源码：Next.js 14 + Prisma + MySQL。</p>
+            <p style="margin-top:12px"><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></p>
+          </article>
+          <article class="feature-card reveal" data-delay="1">
+            <div class="feature-icon" aria-hidden="true">📦</div>
+            <h3>Yuncang-Update</h3>
+            <p>发布包：稳定版、测试版、离线包、安装脚本。</p>
+            <p style="margin-top:12px"><a href="https://github.com/yuejiaxinabc/Yuncang-Update/releases" target="_blank" rel="noopener">GitHub Releases</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang-Update/releases" target="_blank" rel="noopener">Gitee Releases</a></p>
+          </article>
+          <article class="feature-card reveal" data-delay="2">
+            <div class="feature-icon" aria-hidden="true">🖥️</div>
+            <h3>Yuncang-desktop</h3>
+            <p>Windows 桌面客户端源码（Electron）。</p>
+            <p style="margin-top:12px"><a href="https://github.com/yuejiaxinabc/Yuncang-desktop" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang-desktop" target="_blank" rel="noopener">Gitee</a></p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="feature-icon" aria-hidden="true">📱</div>
+            <h3>Yuncang-MiniProgram</h3>
+            <p>微信小程序源码，现场扫码作业。</p>
+            <p style="margin-top:12px"><a href="https://github.com/yuejiaxinabc/Yuncang-MiniProgram" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang-MiniProgram" target="_blank" rel="noopener">Gitee</a></p>
+          </article>
+          <article class="feature-card reveal" data-delay="1">
+            <div class="feature-icon" aria-hidden="true">🔌</div>
+            <h3>Yuncang-SDK</h3>
+            <p>JavaScript / Python / Go 三种语言 SDK。</p>
+            <p style="margin-top:12px"><a href="https://github.com/yuejiaxinabc/Yuncang-SDK" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang-SDK" target="_blank" rel="noopener">Gitee</a></p>
+          </article>
+          <article class="feature-card reveal" data-delay="2">
+            <div class="feature-icon" aria-hidden="true">🌐</div>
+            <h3>Yuncang-index</h3>
+            <p>本官网源码，纯静态页面。</p>
+            <p style="margin-top:12px"><a href="https://github.com/yuejiaxinabc/Yuncang-index" target="_blank" rel="noopener">GitHub</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang-index" target="_blank" rel="noopener">Gitee</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Docs</span>
+          <h2>文档入口</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal"><div class="feature-icon" aria-hidden="true">🚀</div><h3>部署安装</h3><p>x86_64 与 ARM64 两套指令、离线包、装完做什么。</p><p style="margin-top:12px"><a href="deploy.html">查看 →</a></p></article>
+          <article class="feature-card reveal" data-delay="1"><div class="feature-icon" aria-hidden="true">📖</div><h3>用户手册</h3><p>建档、入库、出库、调拨、盘点、报表、权限。</p><p style="margin-top:12px"><a href="manual.html">查看 →</a></p></article>
+          <article class="feature-card reveal" data-delay="2"><div class="feature-icon" aria-hidden="true">🔌</div><h3>开发者手册</h3><p>30 个开放接口、密钥 scope、三语言 SDK、Webhook。</p><p style="margin-top:12px"><a href="dev.html">查看 →</a></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width:52rem">
+        <div class="section-head reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>联系与反馈</h2>
+        </div>
+        <div class="panel reveal">
+          <p><b>在线体验</b>　<a href="https://yc.yuejiaxin.ln.cn" target="_blank" rel="noopener">yc.yuejiaxin.ln.cn</a></p>
+          <p><b>问题反馈</b>　<a href="https://github.com/yuejiaxinabc/Yuncang/issues" target="_blank" rel="noopener">GitHub Issues</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang/issues" target="_blank" rel="noopener">Gitee Issues</a></p>
+          <p><b>下载</b>　<a href="https://github.com/yuejiaxinabc/Yuncang-Update/releases" target="_blank" rel="noopener">GitHub Releases</a> · <a href="https://gitee.com/yuejiaxinabc/Yuncang-Update/releases" target="_blank" rel="noopener">Gitee Releases</a></p>
+          <p><b>许可</b>　<a href="https://opensource.org/licenses/Apache-2.0" target="_blank" rel="noopener">Apache License 2.0</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><img class="logo-img" src="assets/logo-mark.png" alt="Yuncang" /> Yuncang</a>
+          <p class="footer-desc">自托管的开源仓储管理系统，Web / 桌面 / 小程序三端一致，数据留在自己的服务器。</p>
+        </div>
+        <div>
+          <h4>产品</h4>
+          <ul>
+            <li><a href="desktop.html">桌面端</a></li>
+            <li><a href="client.html">客户端</a></li>
+            <li><a href="vm.html">虚拟机镜像</a></li>
+            <li><a href="deploy.html">部署安装</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>文档</h4>
+          <ul>
+            <li><a href="manual.html">用户手册</a></li>
+            <li><a href="dev.html">开发者手册</a></li>
+            <li><a href="about.html">关于云仓</a></li>
+            <li><a href="https://opensource.org/licenses/Apache-2.0" target="_blank" rel="noopener">Apache 2.0</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>仓库</h4>
+          <ul>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://gitee.com/yuejiaxinabc/Yuncang" target="_blank" rel="noopener">Gitee</a></li>
+            <li><a href="https://github.com/yuejiaxinabc/Yuncang-Update/releases" target="_blank" rel="noopener">GitHub 下载</a></li>
+            <li><a href="https://gitee.com/yuejiaxinabc/Yuncang-Update/releases" target="_blank" rel="noopener">Gitee 下载</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Yuncang · 保留所有权利</span>
+        <span>Apache 2.0 License</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
