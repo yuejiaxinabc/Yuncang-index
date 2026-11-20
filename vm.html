@@ -47,17 +47,25 @@
           <span class="eyebrow">Download</span>
           <h2>按宿主架构选镜像</h2>
           <p>宿主是 Intel / AMD 选 x86_64，宿主是 ARM（Apple 芯片、鲲鹏、倚天）选 ARM64。镜像与宿主架构必须一致。</p>
+          <p style="margin-top:10px;color:var(--text-dim);font-size:.9rem">
+            两套镜像的系统版本不同：ARM 镜像内置云仓 <b>1.5.3</b>，x86 镜像内置 <b>1.5.2</b>。
+            开机后在面板「设置 → 检查更新」升到 1.5.3 即可，数据不受影响。
+          </p>
         </div>
         <div class="split">
           <article class="panel reveal">
             <h3>x86_64 镜像</h3>
             <p style="color:var(--text-dim);font-size:.94rem">Intel / AMD 平台：VMware、Proxmox、KVM、Hyper-V</p>
             <div class="repo-meta" style="margin-top:14px">
-              <span>VMDK</span><span>QCOW2</span><span>制作中</span>
+              <span>7.9 GB</span><span>云仓 1.5.2</span><span>开机即用</span>
             </div>
-            <div class="hero-actions" style="margin-top:22px;justify-content:flex-start">
-              <span class="btn btn-ghost" aria-disabled="true" style="cursor:not-allowed;opacity:.62">敬请期待</span>
+            <div class="hero-actions" style="margin-top:22px;justify-content:flex-start;flex-wrap:wrap;gap:12px">
+              <a class="btn btn-primary" href="https://1841193185.cdn.123clouddisk.com/1841193185/39328685" rel="noopener">下载 VMDK（VMware）</a>
+              <a class="btn btn-primary" href="https://1841193185.cdn.123clouddisk.com/1841193185/38483669" rel="noopener">下载 QCOW2（云主机）</a>
             </div>
+            <p style="margin-top:14px;color:var(--text-dim);font-size:.86rem">
+              VMDK 给 VMware 用；QCOW2 给云主机、KVM、Proxmox、UTM 用。
+            </p>
           </article>
           <article class="panel reveal" data-delay="1">
             <h3>ARM64 镜像</h3>
@@ -75,7 +83,8 @@
           </article>
         </div>
         <p style="margin-top:20px;color:var(--text-dim);font-size:.92rem">
-          镜像内已含 Ubuntu 22.04、Node 20、MySQL 8 与云仓 1.5.3，首次开机自动初始化数据库。镜像文件 12.2 GB，建议给虚拟机预留 30 GB 以上磁盘。
+          镜像内已含 Ubuntu 22.04、Node 20、MySQL 8 与云仓本体（ARM 1.5.3 / x86 1.5.2），首次开机自动初始化数据库。
+          文件大小 ARM 12.2 GB、x86 7.9 GB，建议给虚拟机预留 30 GB 以上磁盘。
         </p>
       </div>
     </section>
