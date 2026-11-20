@@ -51,9 +51,9 @@
         <div class="split">
           <article class="panel reveal">
             <h3>x86_64 镜像</h3>
-            <p style="color:var(--text-dim);font-size:.94rem">适用于 Intel / AMD 平台：VMware、VirtualBox、Proxmox、KVM、Hyper-V</p>
+            <p style="color:var(--text-dim);font-size:.94rem">Intel / AMD 平台：VMware、Proxmox、KVM、Hyper-V</p>
             <div class="repo-meta" style="margin-top:14px">
-              <span>qcow2</span><span>vmdk</span><span>开机即用</span>
+              <span>VMDK</span><span>QCOW2</span><span>制作中</span>
             </div>
             <div class="hero-actions" style="margin-top:22px;justify-content:flex-start">
               <span class="btn btn-ghost" aria-disabled="true" style="cursor:not-allowed;opacity:.62">敬请期待</span>
@@ -61,18 +61,21 @@
           </article>
           <article class="panel reveal" data-delay="1">
             <h3>ARM64 镜像</h3>
-            <p style="color:var(--text-dim);font-size:.94rem">适用于 ARM64 平台：Apple 芯片上的 UTM / Parallels、鲲鹏、倚天、ARM 云主机</p>
+            <p style="color:var(--text-dim);font-size:.94rem">Apple 芯片、鲲鹏、倚天、ARM 云主机</p>
             <div class="repo-meta" style="margin-top:14px">
-              <span>qcow2</span><span>vmdk</span><span>开机即用</span>
+              <span>12.2 GB</span><span>云仓 1.5.3</span><span>开机即用</span>
             </div>
             <div class="hero-actions" style="margin-top:22px;justify-content:flex-start;flex-wrap:wrap;gap:12px">
-              <a class="btn btn-primary" href="https://1841193185.cdn.123clouddisk.com/1841193185/37862503" target="_blank" rel="noopener">下载 QCOW2</a>
-              <a class="btn btn-ghost" href="https://1841193185.cdn.123clouddisk.com/1841193185/37863361" target="_blank" rel="noopener">下载 VMDK</a>
+              <a class="btn btn-primary" href="https://1841193185.cdn.123clouddisk.com/1841193185/37863361" rel="noopener">下载 VMDK（VMware）</a>
+              <a class="btn btn-primary" href="https://1841193185.cdn.123clouddisk.com/1841193185/37862503" rel="noopener">下载 QCOW2（云主机）</a>
             </div>
+            <p style="margin-top:14px;color:var(--text-dim);font-size:.86rem">
+              VMDK 给 VMware 用；QCOW2 给云主机、KVM、Proxmox、UTM 用。
+            </p>
           </article>
         </div>
         <p style="margin-top:20px;color:var(--text-dim);font-size:.92rem">
-          镜像内已含 Ubuntu 22.04、Node 20、MySQL 8 与云仓 1.5.3，首次开机自动初始化数据库。
+          镜像内已含 Ubuntu 22.04、Node 20、MySQL 8 与云仓 1.5.3，首次开机自动初始化数据库。镜像文件 12.2 GB，建议给虚拟机预留 30 GB 以上磁盘。
         </p>
       </div>
     </section>
@@ -108,7 +111,7 @@
           <article class="feature-card reveal">
             <div class="feature-icon" aria-hidden="true">1️⃣</div>
             <h3>导入镜像</h3>
-            <p>VMware 用 VMDK，Proxmox / KVM / UTM 用 QCOW2；VirtualBox 需先转 vdi（<code>VBoxManage clonemedium</code>）。</p>
+            <p><b>VMware</b>：文件 → 打开 → 选 <code>.vmdk</code>。<b>云主机 / KVM / Proxmox</b>：上传 <code>.qcow2</code> 到存储后挂载启动。<b>UTM</b>：新建虚拟机 → 选 QCOW2。</p>
           </article>
           <article class="feature-card reveal" data-delay="1">
             <div class="feature-icon" aria-hidden="true">2️⃣</div>
