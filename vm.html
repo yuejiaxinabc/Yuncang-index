@@ -53,20 +53,21 @@
             <h3>x86_64 镜像</h3>
             <p style="color:var(--text-dim);font-size:.94rem">适用于 Intel / AMD 平台：VMware、VirtualBox、Proxmox、KVM、Hyper-V</p>
             <div class="repo-meta" style="margin-top:14px">
-              <span>qcow2</span><span>约 3.2 GB</span><span>开机即用</span>
+              <span>qcow2</span><span>vmdk</span><span>开机即用</span>
             </div>
             <div class="hero-actions" style="margin-top:22px;justify-content:flex-start">
-              <a class="btn btn-primary" href="https://github.com/yuejiaxinabc/Yuncang-Update/releases/download/vm-1.5.3/Yuncang-1.5.3-x86_64.qcow2" target="_blank" rel="noopener">下载 x86_64 镜像</a>
+              <span class="btn btn-ghost" aria-disabled="true" style="cursor:not-allowed;opacity:.62">敬请期待</span>
             </div>
           </article>
           <article class="panel reveal" data-delay="1">
             <h3>ARM64 镜像</h3>
             <p style="color:var(--text-dim);font-size:.94rem">适用于 ARM64 平台：Apple 芯片上的 UTM / Parallels、鲲鹏、倚天、ARM 云主机</p>
             <div class="repo-meta" style="margin-top:14px">
-              <span>qcow2</span><span>约 3.1 GB</span><span>开机即用</span>
+              <span>qcow2</span><span>vmdk</span><span>开机即用</span>
             </div>
-            <div class="hero-actions" style="margin-top:22px;justify-content:flex-start">
-              <a class="btn btn-primary" href="https://github.com/yuejiaxinabc/Yuncang-Update/releases/download/vm-1.5.3/Yuncang-1.5.3-arm64.qcow2" target="_blank" rel="noopener">下载 ARM64 镜像</a>
+            <div class="hero-actions" style="margin-top:22px;justify-content:flex-start;flex-wrap:wrap;gap:12px">
+              <a class="btn btn-primary" href="https://1841193185.cdn.123clouddisk.com/1841193185/37862503" target="_blank" rel="noopener">下载 QCOW2</a>
+              <a class="btn btn-ghost" href="https://1841193185.cdn.123clouddisk.com/1841193185/37863361" target="_blank" rel="noopener">下载 VMDK</a>
             </div>
           </article>
         </div>
@@ -107,7 +108,7 @@
           <article class="feature-card reveal">
             <div class="feature-icon" aria-hidden="true">1️⃣</div>
             <h3>导入镜像</h3>
-            <p>VMware：文件 → 打开 → 选 qcow2；VirtualBox：需要先转 vdi（<code>VBoxManage clonemedium</code>）；Proxmox：直接上传到存储。</p>
+            <p>VMware 用 VMDK，Proxmox / KVM / UTM 用 QCOW2；VirtualBox 需先转 vdi（<code>VBoxManage clonemedium</code>）。</p>
           </article>
           <article class="feature-card reveal" data-delay="1">
             <div class="feature-icon" aria-hidden="true">2️⃣</div>
