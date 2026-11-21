@@ -2,7 +2,7 @@
 
 云仓（Yuncang）官网静态站。纯 HTML / CSS / JS，无构建步骤。
 
-版本 1.5.3 · Apache License 2.0
+版本 1.5.5 · Apache License 2.0
 
 ## 页面
 
